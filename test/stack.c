@@ -4,7 +4,7 @@
 
 #define STACK_MAX 10
 #define STACK_IMPLEMENTATION
-#include "stack.h"
+#include "../source/stack.h"
 
 int8_t
 test_stack_initialise();
@@ -38,10 +38,10 @@ int main() {
 int8_t
 test_stack_initialise() {
         struct stack s;
-        size_t top = s.top;
+        size_t top = -1;//s.top;
         stack_initialise(&s);
 
-        if(top == s.top) return -1;
+        if(top != s.top) return -1;
         return 0;
 }
 
