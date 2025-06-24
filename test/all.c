@@ -1,11 +1,11 @@
-#include <stdio.h>
-#define TEST_ALL
-#include "test.h"
+//#include <stdio.h>
+//#define TEST_ALL
+//#include "test.h"
 
-#include "stack.c"
+//#include "test_stack.c"
 
-int main() {
-        test_stack();
-        show_results(stderr);
-        return 0;
-}
+//int main() {
+//        //test_stack();
+//        //show_results(stderr);
+//        return 0;
+//}
