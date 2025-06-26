@@ -1,11 +1,13 @@
 //#include <stdio.h>
-//#define TEST_ALL
-//#include "test.h"
+#include "test.h"
 
-//#include "test_stack.c"
+#include "./stack.h"
 
-//int main() {
-//        //test_stack();
-//        //show_results(stderr);
-//        return 0;
-//}
+#include "./genome.h"
+
+int main() {
+        test_stack();
+        test_genome();
+        show_results(stderr);
+        return 0;
+}
