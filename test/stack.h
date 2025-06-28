@@ -25,7 +25,7 @@ test_stack_push() {
         stack_push(&s, INT8_MIN);
 
         if(1 != s.top) return -1;
-        if(INT8_MIN != s.values[s.top]) return -2;
+        if(INT8_MIN != (int)s.values[s.top]) return -2;
         return 0;
 }
 
@@ -37,7 +37,7 @@ test_stack_pop() {
         stack_push(&s, INT8_MAX);
         stack_push(&s, INT8_MIN);
 
-        if(INT8_MIN != stack_pop(&s)) return -1;
+        if(INT8_MIN != (int)stack_pop(&s)) return -1;
         if(0 != s.top) return -2;
         if(INT8_MAX != s.values[s.top]) return -3;
         return 0;
@@ -51,9 +51,9 @@ test_stack_peek() {
         stack_push(&s, INT8_MAX);
         stack_push(&s, INT8_MIN);
 
-        if(INT8_MIN != stack_peek(&s)) return -1;
+        if(INT8_MIN != (int)stack_peek(&s)) return -1;
         stack_pop(&s);
-        if(INT8_MAX != stack_peek(&s)) return -2;
+        if(INT8_MAX != (int)stack_peek(&s)) return -2;
         return 0;
 }
 
