@@ -20,10 +20,10 @@ stack_initialise(struct stack *restrict stack);
 extern inline void
 stack_push(struct stack *restrict stack, size_t const index);
 
-extern inline size_t const
+extern inline size_t
 stack_pop(struct stack *restrict stack);
 
-extern inline size_t const
+extern inline size_t
 stack_peek(struct stack *const restrict stack);
 
 extern inline bool
@@ -47,13 +47,13 @@ stack_push(struct stack *restrict stack, size_t const index) {
         stack->values[++stack->top] = index;
 }
 
-extern inline size_t const
+extern inline size_t
 stack_pop(struct stack *restrict stack) {
         if(stack_is_empty(stack)) return INT_MIN;
         return stack->values[stack->top--];
 }
 
-extern inline size_t const
+extern inline size_t
 stack_peek(struct stack *const restrict stack) {
         return stack->values[stack->top];
 }
