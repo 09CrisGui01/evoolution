@@ -1,6 +1,7 @@
 #ifndef GENOME
 #define GENOME
 
+#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,9 +14,15 @@ struct genome {
         float mutation_rate;
 };
 
-void genome_initialise(struct genome *const restrict genome);
+struct genome
+genome_generate();
 
-void genome_fprintf(FILE *stream, struct genome *const restrict genome);
+[[deprecated("Use genome_generate() instead.")]] 
+void
+genome_initialise(struct genome *const restrict genome);
+
+void 
+genome_fprintf(FILE *stream, struct genome *const restrict genome);
 
 #endif //GENOME
 
@@ -38,6 +45,16 @@ void genome_fprintf(FILE *stream, struct genome *const restrict genome) {
         }
         fprintf(stream, "\n");
       }
+}
+
+struct genome
+genome_generate() {
+        struct genome g = {};
+        g.mutation_rate = (float)rand();
+        for(size_t i=0; i<GEN_LENGTH*GEN_QUANTITY; ++i) {
+                g.DNA[i] = (uint8_t)(rand() % 256);
+        }
+        return g;
 }
 
 #endif //GENOME_IMPLEMENTATION
