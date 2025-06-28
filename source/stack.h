@@ -65,7 +65,7 @@ stack_is_full(struct stack *const restrict stack) {
 
 extern inline bool
 stack_is_empty(struct stack *const restrict stack) {
-       return -1 == stack->top;
+       return -1 == (int)stack->top;
 }
 
 #endif //STACK_IMPLEMENTATION
