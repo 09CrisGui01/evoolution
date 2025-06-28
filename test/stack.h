@@ -1,8 +1,7 @@
 #include <stdint.h>
 
 #include "test.h"
-//#include "../source/stack.h"
-#define STACK_MAX 10
+
 #define STACK_IMPLEMENTATION
 #include "../source/stack.h"
 
