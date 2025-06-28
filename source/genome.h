@@ -6,8 +6,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef GEN_LENGTH
 #define GEN_LENGTH 16
+#endif
+
+#ifndef GEN_QUANTITY
 #define GEN_QUANTITY 8
+#endif
 
 struct genome {
         uint8_t DNA[GEN_LENGTH*GEN_QUANTITY];
