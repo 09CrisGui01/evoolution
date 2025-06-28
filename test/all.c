@@ -7,9 +7,10 @@
 
 
 int main() {
-        test_stack();
         test_genome();
+        test_stack();
         test_arena();
+
         show_results(stderr);
         return 0;
 }
