@@ -18,19 +18,19 @@ do {                                                            \
         int8_t r = func(__VA_ARGS__);                           \
         if(r < 0) {                                             \
                 fprintf(stream, "ERROR:\t\t %s( ", #func);      \
-                fprintf(stream, "%s", ##__VA_ARGS__);           \
+                fprintf(stream, "\n", ##__VA_ARGS__);           \
                 fprintf(stream, " ) \t-> %d\n", r);               \
                 ++count_error;                                  \
         }                                                       \
         else if(r > 0) {                                        \
                 fprintf(stream, "WARNING:\t %s( ", #func);      \
-                fprintf(stream, "%s", ##__VA_ARGS__);           \
+                fprintf(stream, "\n", ##__VA_ARGS__);           \
                 fprintf(stream, " ) \t-> %d\n", r);               \
                 ++count_warning;                                \
         }                                                       \
         else {                                                  \
                 fprintf(stream, "SUCCESS:\t %s( ", #func);                                         \
-                fprintf(stream, "%s", ##__VA_ARGS__);           \
+                fprintf(stream, "\n", ##__VA_ARGS__);           \
                 fprintf(stream, " ) \t-> %d\n", r);               \
                 ++count_success;                                \
         }                                                       \
