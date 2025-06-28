@@ -2,7 +2,6 @@
 #include <stdint.h>
 
 #include "test.h"
-//#include "../source/genome.h"
 
 #define GENOME_IMPLEMENTATION
 #include "../source/genome.h"
